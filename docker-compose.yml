@@ -1,0 +1,14 @@
+version: '2'
+services:
+  eolinker_os:
+    build: lnmp
+    image: eolinker/eolinker_os
+    volumes:
+      - "./volumes/apps:/apps"
+    ports:
+      - "3306:3306"
+      - "80:80"
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=eolinker_os
+    restart: always
